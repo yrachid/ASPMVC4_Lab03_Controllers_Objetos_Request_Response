@@ -28,6 +28,13 @@ namespace MvcMusicStore.Controllers
             }
         }
 
+        public JsonResult Artistas() 
+        {
+            var model = db.Artists.Take(5);
+
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
         //
         // GET: /Store/
 
