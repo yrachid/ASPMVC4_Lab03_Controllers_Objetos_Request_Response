@@ -11,9 +11,18 @@ namespace MvcMusicStore.Controllers
 
         public void Agente()
         {
-            string Agent = Request.Browser.Browser;
-            string UserAgent = Request.UserAgent;
-            string Source = Request.UserHostAddress;
+            string agent = Request.Browser.Browser;
+            string useragent = Request.UserAgent;
+            string source = Request.UserHostAddress;
+
+            Response.Write("<H1>Hello MVC!</H1>"); 
+            Response.Write("<h2>Welcome, you are using "); 
+            Response.Write(agent); 
+            Response.Write(" and your address is "); 
+            Response.Write(source); 
+            Response.Write("! </h2>"); 
+            Response.Write("<h2>User agent: "); 
+            Response.Write(useragent + "</h2>");
         }
 
         public ActionResult Index()
