@@ -25,6 +25,26 @@ namespace MvcMusicStore.Controllers
             Response.Write(useragent + "</h2>");
         }
 
+        public void HelloName(string name)
+        {
+            string value = HttpUtility.HtmlEncode(name);
+
+            Response.Write("<h1> Hello ");
+            Response.Write(value);
+            Response.Write("!</h1>");
+
+        }
+
+        public void HelloId(string id)
+        {
+            string value = HttpUtility.HtmlEncode(id);
+
+            Response.Write("<h1> Hello ");
+            Response.Write(value);
+            Response.Write("!</h1>");
+        }
+
+
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
