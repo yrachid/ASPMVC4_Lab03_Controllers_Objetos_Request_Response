@@ -8,6 +8,14 @@ namespace MvcMusicStore.Controllers
 {
     public class HomeController : Controller
     {
+
+        public void Agente()
+        {
+            string Agent = Request.Browser.Browser;
+            string UserAgent = Request.UserAgent;
+            string Source = Request.UserHostAddress;
+        }
+
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
