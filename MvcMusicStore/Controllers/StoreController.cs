@@ -13,6 +13,21 @@ namespace MvcMusicStore.Controllers
     {
         private MusicStoreEntities db = new MusicStoreEntities();
 
+        public ActionResult Catalogo(string genero)
+        {
+            string filepath = Server.MapPath("~/Content/Catalogo") + genero.ToLower() + ".pdf";
+
+            if (System.IO.File.Exists(filepath))
+            {
+                return new FilePathResult(filepath, "application/pdf");
+            }
+
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+
         //
         // GET: /Store/
 
